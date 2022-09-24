@@ -1,0 +1,431 @@
+@import "../smart-grid";
+@import "../variables";
+
+header {
+
+  .lg-block({
+    position: relative;
+    z-index: 5;
+  });
+}
+
+.header {
+  .col();
+  .size(12);
+  height: 96px;
+  padding: 20px 0;
+  display: flex;
+  border-bottom: 1px solid @c-tone-high;
+  text-align: right;
+  .lg-block({
+    height: 84px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: unset;
+
+  });
+
+  &-logo {
+    display: inline-flex;
+    height: 100%;
+    .lg-block({
+
+    });
+    .md-block({
+      margin-top: 8px;
+    });
+    .xs-block({
+      display: flex;
+      width: 220px;
+      height: 100%;
+      //background: url("../../../assets/img/m-logo-short.svg") no-repeat center center;
+    });
+    /*    img {
+          .xs-block({
+            display: none;
+          });
+        }*/
+  }
+
+  &-tel {
+    font-size: 26px;
+    .bold;
+    text-decoration: none;
+    color: @c-text;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 90px;
+    align-self: center;
+
+    &.white {
+      color: @c-bg;
+      span {
+        color: inherit;
+      }
+    }
+
+    .lg-block({
+      display: none;
+      position: absolute;
+      top: 33px;
+      right: 20px;
+      color: @c-text !important;
+      z-index: 5;
+      margin: 0;
+
+    });
+
+    em {
+      .bold;
+      color: @c-accent;
+    }
+
+    span {
+      display: block;
+      color: @c-text;
+      font-size: 14px;
+      font-weight: normal;
+      .lg-block({
+        display: none;
+      });
+
+    }
+  }
+
+  &-login {
+    height: 52px;
+    padding: 0 25px 0 61px;
+    text-decoration: none;
+    background: url("../../../assets/img/icons/user.png") no-repeat 25px center @c-accent;
+    background-size: 25px;
+    font-size: 18px;
+    color: @c-btn-text;
+    .lg-block({
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      width: 40px;
+      height: 40px;
+      background: url("../../../assets/img/icons/m-user-regular.svg") no-repeat 0 center;
+      background-size: contain;
+      overflow: hidden;
+      text-indent: 999em;
+      padding: 0;
+
+    });
+    .xs-block({
+      top: 30px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+    });
+  }
+
+  &-bell {
+    .square(52px);
+    border: 1px solid @c-bg;
+    border-radius: 6px;
+     background: url("../../../assets/img/icons/personal-bell.svg") no-repeat center;
+    margin-right: 30px;
+  }
+  &-logout {
+    height: 52px;
+    border: 1px solid @c-bg;
+    border-radius: 6px;
+    font-size: 18px;
+    color: @c-bg;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 30px 0 60px;
+     background: url("../../../assets/img/icons/personal-logout.svg") no-repeat 30px center
+  }
+
+  &-nav {
+    width: 100%;
+    .col();
+    .size(12);
+    .space-between;
+    height: 105px;
+    padding: 26px 10px;
+
+    .lg-block({
+      display: none;
+      width: 100vw;
+      margin: 0;
+      background-size: 100% auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      padding-top: 120px;
+      padding-bottom: 100px;
+      height: unset;
+      z-index: 1;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: @c-bg;
+        bottom: 0;
+        left: -150%;
+        width: 300%;
+        height: 200%;
+        z-index: -1;
+        border-radius: 50%;
+      }
+      &:before {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+    });
+
+    &-icon {
+      display: none;
+      .lg-block({
+        display: block;
+        height: 22px;
+        width: 22px;
+        margin: 0 14px 0 @fields;
+      });
+      .sm-block({
+        margin: 0 14px 0 @fields_sm;
+      });
+    }
+
+    li {
+      display: inline-flex;
+      position: relative;
+      z-index: 1;
+
+      .lg-block({
+        display: flex;
+        margin-bottom: 33px;
+      });
+
+
+      &.parent {
+
+        > a {
+          height: 31px;
+
+          padding-right: 26px;
+          padding-bottom: 6px;
+          background: url("../../../assets/img/icons/shevron-down.png") no-repeat right 7px;
+          background-size: 17px auto;
+        }
+
+
+        .lg-block({
+          padding: unset;
+          background: unset;
+
+        });
+
+        &:hover {
+          > a {
+            color: @c-text;
+            border-bottom: 2px solid @c-accent;
+          }
+
+
+          > ul {
+            display: block;
+
+          }
+        }
+      }
+
+
+      a {
+        font-size: 18px;
+        color: @c-text;
+        .lg-block({
+          color: @c-text !important;
+          display: inline-flex;
+          text-decoration: underline;
+        });
+      }
+
+      > ul {
+        display: none;
+        position: absolute;
+        left: -20px;
+        top: -17px;
+        border: 1px solid @c-tone-high;
+        min-width: 100%;
+
+        padding: 58px 30px 20px 25px;
+        border-radius: 0 0 20px 20px;
+        background-color: @c-bg;
+        z-index: -1;
+
+
+        li {
+          display: flex;
+          margin-top: 10px;
+          white-space: nowrap;
+
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+
+#headerNav {
+  display: none;
+}
+
+label[for="headerNav"] {
+  display: none;
+}
+
+.lg-block({
+
+  label[for="headerNav"] {
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    width: 40px;
+    height: 40px;
+    background: url("../../../assets/img/icons/m-menu-regular.svg") no-repeat 0 center;
+    background-size: contain;
+    overflow: hidden;
+    text-indent: 999em;
+    padding: 0;
+    z-index: 2;
+    display: block;
+  }
+
+  #headerNav:checked + label {
+    background: url("../../../assets/img/icons/m-menu-active.svg") no-repeat 0 center;
+    background-size: contain;
+  }
+
+  #headerNav:checked + label + .header + .header-nav {
+    display: flex;
+  }
+
+  #headerNav:checked + label + .header {
+    .header-tel {
+      display: block;
+    }
+
+    .header-logo {
+      display: none;
+    }
+  }
+
+});
+
+.xs-block({
+
+  label[for="headerNav"] {
+    top: 30px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+  }
+});
+
+
+.breadcrumbs {
+  background: @c-tone-mid;
+  font-size: 14px;
+
+  &-links {
+    .col();
+    .size(12);
+    height: 54px;
+    .middle
+  }
+
+  &-back {
+
+    .col();
+    .size(12);
+    height: 52px;
+    align-items: center;
+    margin-top: 5px;
+    display: none;
+
+    a {
+      display: inline-block;
+      padding-left: 30px;
+      background: url("../../../assets/img/icons/chevron-left.svg") no-repeat 0 center;
+      font-size: 14px;
+    }
+
+    .xs-block({
+      height: 42px;
+    });
+  }
+
+  a {
+    color: @c-tone-high;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  i {
+    display: inline-block;
+    .wh(22px, 13px);
+    margin: 0 21px;
+    background: url("../../../assets/img/icons/car.svg") no-repeat center
+  }
+
+  span {
+
+  }
+
+  .md-block({
+    &-links {
+      display: none;
+    }
+    &-back {
+      display: flex;
+    }
+  });
+
+  &-inner {
+    //.col();
+    //.size(12);
+    font-size: 14px;
+    .middle;
+    a {
+      color: @c-tone-high;
+      display: inline-block;
+      .inline-middle;
+      margin-right: 32px;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+      &:before {
+        content: '';
+        display: block;
+        .round(16px);
+        mask: url("../../../assets/img/icons/chevron-left.svg") no-repeat 0 center;
+          -webkit-mask: url("../../../assets/img/icons/chevron-left.svg") no-repeat 0 center;
+        background-color: @c-tone-high;
+      }
+    }
+
+  }
+}

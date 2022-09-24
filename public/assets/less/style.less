@@ -1,0 +1,60 @@
+@import "fonts/stylesheet.css";
+@import "ui/animate.css";
+@import "smart-grid";
+.reset;
+@import "variables";
+// UI
+@import "ui/form";
+@import "ui/top-slider";
+@import "ui/cite";
+@import "ui/tab-widget";
+@import "ui/calculator.less";
+@import "ui/actions";
+// SECTIONS
+@import "sections/header";
+@import "sections/main";
+@import "sections/personal";
+@import "sections/shipment";
+@import "sections/user";
+@import "sections/address-book";
+@import "sections/departureItem";
+@import "sections/docs";
+@import "sections/info";
+@import "sections/auth";
+
+
+
+/* width */
+.scroll::-webkit-scrollbar {
+    width: 10px;
+}
+/* button */
+.scroll::-webkit-scrollbar-button {
+    background: @c-bg;
+}
+/* Handle */
+.scroll::-webkit-scrollbar-thumb {
+    background: @c-accent;
+    border-radius: 4px;
+}
+/* Handle on hover */
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: @c-bg;
+}
+/* Track */
+.scroll::-webkit-scrollbar-track {
+    background: @c-bg;
+    width: 2px;
+}
+/* The track NOT covered by the handle.*/
+::-webkit-scrollbar-track-piece {
+    background: @c-bg;
+}
+/* Corner */
+.scroll::-webkit-scrollbar-corner {
+    background: @c-bg;
+}
+/* Resizer */
+.scroll::-webkit-resizer {
+    background: @c-bg;
+}

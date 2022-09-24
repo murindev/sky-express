@@ -1,0 +1,712 @@
+@import "../smart-grid";
+
+#sw {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1000000000;
+}
+
+
+/* label */
+label {
+
+  &[class*="i-"] {
+    position: relative;
+
+    &.i {
+      &-chevron {
+        &:after {
+          background: url("../../../assets/img/icons/chevron-top.svg") no-repeat left 5px;
+        }
+      }
+
+      &-chevron-bottom {
+        &:after {
+          background: url("../../../assets/img/icons/chevron-bottom.svg") no-repeat left 5px;
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      .square(20px);
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      background-size: contain;
+      .md-block({
+        top: 11px;
+        right: 11px;
+      });
+    }
+  }
+
+  &.regular, &.contrast{
+    span {
+      display: block;
+      padding: 14px 0 14px 3px;
+      color: @c-text;
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+
+    sup {
+      color: @c-accent-2;
+      font-size: 18px;
+    }
+
+    small {
+      display: block;
+      margin-top: 14px;
+      padding-left: 14px;
+    }
+
+    &.hint {
+      &-inset {
+        position: relative;
+
+        input {
+          border-right-width: 40px !important;
+        }
+
+        small {
+          .hintStyled;
+        }
+
+      }
+    }
+  }
+
+
+}
+
+/*hint*/
+
+.hintStyled {
+  .circle(20px);
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 14px;
+  right: 20px;
+  z-index: 1;
+  background: url("../../../assets/img/icons/question.svg") no-repeat center;
+
+  &:hover {
+    &:before, &:after {
+      display: block;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: -3px;
+    right: -40px;
+    .wh(24px, 24px);
+    background-color: @c-accent;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    content: attr(rel);
+    display: none;
+    padding: 14px 20px;
+    position: absolute;
+    background-color: @c-bg;
+    border-radius: 20px;
+    width: 260px;
+    box-shadow: @shadow-light;
+    line-height: 24px;
+    z-index: 2;
+    transform: translate(47px, -19px);
+    border: 1px solid @c-tone-mid;
+  }
+}
+
+
+
+/* button */
+.btn {
+  border-radius: 6px;
+  .center;
+}
+
+button {
+  border: 0;
+  background: unset;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+
+
+  &:hover {
+    opacity: .75;
+  }
+
+  &.btn {
+    height: 50px;
+    padding: 0 44px;
+    &.acc {
+      .center;
+      background: @c-accent;
+      .bold-18;
+      color: @c-text;
+    }
+    .md-block({
+      height: 43px;
+    });
+    .xs-block({
+      height: 48px;
+    });
+
+    &.clean {
+      border: 1px solid @c-tone-mid;
+      .bold(16px);
+      color: @c-tone-mid;
+    }
+  }
+
+  &.accent {
+    .wh(100%, 50px);
+    .center;
+    background: @c-accent;
+    .bold-18;
+    color: @c-text;
+    border-radius: 8px;
+    .md-block({
+      height: 43px;
+      font-size: 14px;
+    });
+    .xs-block({
+      font-size: 14px;
+    });
+
+    &.dark {
+      background-color: @c-accent-2;
+      color: @c-bg;
+      font-size: 18px;
+    }
+  }
+
+
+  // icons
+
+  span {
+    .inline-center;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      .round(20px);
+      margin-right: 12px;
+      mask-size: cover;
+        -webkit-mask-size: cover;
+    }
+
+    &.i {
+      &-add-circle {
+        font-weight: normal;
+
+        &:before {
+          mask: url("../../../assets/img/icons/plus-circle.svg") no-repeat center;
+            -webkit-mask: url("../../../assets/img/icons/plus-circle.svg") no-repeat center;
+          background-color: @c-text;
+          mask-size: cover;
+            -webkit-mask-size: cover;
+        }
+
+        &.white {
+          &:before {
+            background-color: @c-bg;
+          }
+        }
+      }
+
+      &-copy {
+        &:before {
+          .round(21px);
+          mask: url("../../../assets/img/icons/copy.svg") no-repeat center;
+            -webkit-mask: url("../../../assets/img/icons/copy.svg") no-repeat center;
+          background-color: @c-text;
+          mask-size: contain;
+            -webkit-mask-size: contain;
+        }
+      }
+
+      &-remove {
+        &:before {
+          mask: url("../../../assets/img/icons/remove.svg") no-repeat center;
+            -webkit-mask: url("../../../assets/img/icons/remove.svg") no-repeat center;
+          background-color: @c-accent-2;
+          mask-size: cover;
+            -webkit-mask-size: cover;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+/*  radio checkbox  */
+
+input[type="radio"], input[type="checkbox"] {
+  display: none;
+}
+
+/* text  number */
+
+.inputText {
+  height: 50px;
+  border-style: solid;
+  border-width: 12px;
+  border-radius: 8px;
+  padding: 0 7px;
+  width: 100%;
+  .md-block({
+    height: 43px;
+  });
+}
+
+
+.regularTextNumber {
+  .inputText;
+  outline-color: @c-tone-mid;
+  background: @c-tone-mid;
+  border-color: @c-tone-mid;
+
+  &:focus {
+    outline: 1px solid @c-tone-high;
+  }
+}
+
+.contrastInputStyle {
+  .inputText;
+  outline-color: @c-bg;
+  background: @c-bg;
+  border-color: @c-bg;
+
+  &:focus {
+    outline: 1px solid @c-tone-high;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="search"], input[type="email"], input[type="password"] {
+  outline-width: 1px;
+  outline-color: transparent;
+  box-sizing: border-box;
+
+  &.regular {
+    .regularTextNumber;
+  }
+  &.contrast {
+    .contrastInputStyle;
+  }
+
+  &.light {
+    .inputText;
+    border-color: @c-bg;
+    background: @c-bg;
+
+    &:focus {
+      outline: 1px solid @c-tone-high;
+    }
+  }
+
+  &.thin {
+
+    height: 18px;
+    padding: 0;
+    border: unset;
+    background: transparent;
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
+  }
+}
+
+
+label.regular {
+  input[type="text"], input[type="number"], input[type="email"], input[type="phone"], input[type="date"], input[type="search"], input[type="password"] {
+    .regularTextNumber;
+  }
+
+  &.select {
+    position: relative;
+
+    input[type="text"] + em {
+      display: none;
+    }
+
+    input[type="text"]:focus + em {
+      display: block;
+    }
+
+    em {
+      display: block;
+      width: 100%;
+      background: @c-tone-mid;
+      position: absolute;
+      top: 95px;
+      left: 0;
+      z-index: 1;
+
+
+      i {
+        display: block;
+        font-style: normal;
+        border-left: 1px solid @c-tone-high;
+        border-right: 1px solid @c-tone-high;
+        border-bottom: 1px dashed @c-tone-high;
+        padding: 10px 20px;
+
+        &:hover {
+          color: @c-accent-2;
+        }
+
+        &:first-of-type {
+          border-radius: 6px 6px 0 0;
+          padding-top: 10px;
+          border-top: 1px solid @c-tone-high;
+        }
+
+        &:last-of-type {
+          padding-bottom: 10px;
+          border-bottom: 1px solid @c-tone-high;
+          border-radius: 0 0 6px 6px;
+          //border-bottom: none;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &.search {
+    position: relative;
+    input {
+      padding-right: 36px;
+      box-sizing: border-box;
+    }
+    > button {
+      .round(26px);
+       background: url("../../../assets/img/icons/search.png") no-repeat 0 center;
+      position: absolute;
+      top: 10px;
+      left: calc(100% - 36px);
+    }
+  }
+}
+
+label.contrast {
+  input[type="text"], input[type="number"], input[type="email"], input[type="phone"], input[type="date"], input[type="search"], input[type="password"]{
+    .contrastInputStyle;
+  }
+
+  &.select {
+    position: relative;
+
+    input[type="text"] + em {
+      display: none;
+    }
+
+    input[type="text"]:focus + em {
+      display: block;
+    }
+
+    em {
+      display: block;
+      width: 100%;
+      background: @c-tone-mid;
+      position: absolute;
+      top: 95px;
+      left: 0;
+      z-index: 1;
+
+
+      i {
+        display: block;
+        font-style: normal;
+        border-left: 1px solid @c-tone-high;
+        border-right: 1px solid @c-tone-high;
+        border-bottom: 1px dashed @c-tone-high;
+        padding: 10px 20px;
+
+        &:hover {
+          color: @c-accent-2;
+        }
+
+        &:first-of-type {
+          border-radius: 6px 6px 0 0;
+          padding-top: 10px;
+          border-top: 1px solid @c-tone-high;
+        }
+
+        &:last-of-type {
+          padding-bottom: 10px;
+          border-bottom: 1px solid @c-tone-high;
+          border-radius: 0 0 6px 6px;
+          //border-bottom: none;
+
+        }
+
+      }
+
+    }
+
+  }
+}
+
+// widgets
+
+
+.checkLabel {
+  box-sizing: border-box;
+
+  input[type="text"], input[type="number"], input[type="email"], input[type="phone"], input[type="search"] {
+    background: transparent !important;
+    border: 1px solid red;
+  }
+
+  border: 1px solid red;
+}
+
+
+.select {
+  position: relative;
+
+  > span {
+    display: block;
+    padding: 14px 0 14px 3px;
+    color: #000000;
+    overflow-x: hidden;
+    white-space: nowrap;
+    sup {
+      color: #AC007C;
+      font-size: 18px;
+    }
+  }
+
+  input[type="text"], input[type="search"] {
+    .regularTextNumber;
+  }
+
+  &-flag {
+    display: block;
+    width: 100%;
+    height: 43px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+  }
+
+  .options {
+    border: 1px solid @c-tone-high;
+    border-radius: 6px;
+    background: @c-tone-mid;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .option {
+    label {
+      position: relative;
+      width: 100%;
+      height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 14px;
+      padding-left: 20px;
+      background: url("../../../assets/img/dashed.svg") repeat-x 0 bottom;
+
+      &.active {
+        background: url("../../../assets/img/dashed.svg") repeat-x 0 bottom,
+        url("../../../assets/img/icons/checked-round-accent-2.svg") no-repeat right 10px center;
+        color: @c-accent-2;
+      }
+    }
+
+    span {
+      display: block;
+      .bold;
+      font-size: 16px;
+      margin-bottom: 5px;
+
+    }
+
+    &:last-of-type {
+      label {
+        background: unset;
+
+        &.active {
+          background: url("../../../assets/img/icons/checked-round-accent-2.svg") no-repeat right 20px center;
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] + label {
+    background-image: url("../../../assets/img/icons/chevron-bottom.svg");
+    & + .options {
+      display: none;
+    }
+  }
+
+  input[type="checkbox"]:checked + label {
+    border: 1px solid @c-tone-high;
+    background-image: url("../../../assets/img/icons/chevron-top.svg");
+    & + .options {
+      display: block;
+    }
+  }
+
+  &.labeled {
+    .select-flag {
+      top: 50px;
+    }
+    .options {
+      top: 100px;
+    }
+  }
+
+
+}
+
+
+.switcher {
+  display: flex;
+  padding-top: 5px;
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  input[type="checkbox"] + i {
+    display: inline-block;
+    .wh(50px,18px);
+    background: @c-tone-high;
+    border-radius: 9px;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      .circle(28px);
+      position: absolute;
+      top: -5px;
+      left: 0;
+      background: @c-accent;
+    }
+
+  }
+  input[type="checkbox"]:checked + i {
+    background: @c-accent-2;
+    &:after {
+      content: '';
+      left: unset;
+      right: 0;
+    }
+  }
+
+  span {
+    padding: 0 30px 0 10px;
+    position: relative;
+    small {
+      display: block;
+      position: relative;
+      .hintStyled;
+      left: unset;
+      top: 0;
+      right: 0;
+    }
+  }
+
+
+}
+
+
+textarea {
+  width: 100%;
+  border: unset;
+  resize: unset;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  border-radius: 8px;
+  &:focus {
+    border: 1px solid @c-tone-high;
+    outline: unset;
+
+  }
+}
+
+
+.selectbox {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    .round(20px);
+     background: url("../../../assets/img/icons/chevron-bottom.svg") no-repeat 0 center;
+    position: absolute;
+    top: 14px;
+    left: calc(100% - 30px);
+  }
+  em {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    border: 1px solid @c-tone-high;
+    background-color: @c-bg;
+    padding: 10px 0;
+    border-radius: 8px;
+    z-index: 1;
+    &.open {
+      display: block;
+    }
+    i {
+      display: block;
+      font-style: normal;
+      padding: 3px 20px;
+      font-size: 14px;
+      &:hover {
+        background-color: @c-tone-mid;
+      }
+    }
+
+  }
+
+  //input[type="text"] + em {
+  //  display: none;
+  //}
+  input[type="text"]:focus + em {
+    display: block!important;
+  }
+
+}
+
+
+/*[type="search"] {
+  position: relative;
+  &:after {
+    content: ;
+  }
+}*/
+

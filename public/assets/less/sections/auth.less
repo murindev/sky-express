@@ -1,0 +1,47 @@
+@import "../smart-grid";
+.auth {
+    min-height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+
+    &-wpr {
+        .col();
+        .size(6);
+        display: flex;
+        flex-direction: column;
+        //margin-top: -50px;
+        margin: 50px auto 0px;
+    }
+
+    &-logo {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    &-form {
+        background: @c-tone-mid;
+        box-shadow: @shadow-light;
+        border-radius: 8px;
+        padding: 20px 40px 40px;
+        margin: 30px 0;
+
+        button {
+            margin-top: 50px;
+        }
+    }
+
+    &-link {
+        color: @c-text;
+        &-center {align-self: center;}
+        &-right {align-self: flex-end;}
+    }
+
+    &-errors {
+        width: 100%;
+        background: red;
+        color: white;
+        padding: 20px 40px;
+    }
+
+}

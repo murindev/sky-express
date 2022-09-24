@@ -1,0 +1,22 @@
+cite {
+  &.question {
+    display: block;
+    padding-left: 32px;
+    background: url("../../../assets/img/icons/question.svg") no-repeat 0 5px;
+    line-height: 24px;
+    a {
+      text-decoration: underline;
+      color: @c-accent-2;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &.warn {
+    .middle;
+    background: url("../../../assets/img/icons/warn.svg") no-repeat 0 center;
+    background-size: contain;
+    padding-left: 30px;
+  }
+}

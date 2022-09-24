@@ -1,0 +1,107 @@
+@import "../smart-grid";
+
+.personal-bordered {
+  margin-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  h2 {
+    .col();
+    .size(12);
+    font-size: 26px;
+  }
+}
+.tariff-title {
+  .col();
+  .size(12);
+  padding-left: 60px;
+  margin-bottom: 16px;
+   background: url("../../../assets/img/icons/bike.svg") no-repeat 0 center;
+  background-size: 44px auto;
+  font-size: 18px;
+  b {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+}
+
+.personal-departureItem {
+
+  &_header {
+    .middle;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .item-info {
+      margin-right: 40px;
+    }
+
+    .item-informer {
+      margin-left: auto;
+    }
+
+    .item-inform {
+      width: unset;
+      margin-left: auto;
+    }
+
+  }
+
+  &_sender {
+    .col();
+    .size(12);
+
+  }
+
+  &_tariff {
+    .col();
+    .size(12);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed @c-tone-high;
+    padding-bottom: 20px;
+    //padding-top: 20px;
+
+    &:last-of-type {
+      border-bottom: unset;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    label {
+      margin-right: 16px;
+      &:last-of-type {
+        margin-right: unset;
+      }
+
+
+    }
+  }
+
+  &_comment {
+    .col();
+    .size(12);
+    textarea {
+      display: block;
+      margin-top: 30px;
+      height: 140px;
+      background-color: @c-tone-mid;
+    }
+
+  }
+
+  &_insurance {
+    .col();
+    .size(12);
+    label {
+      display: flex;
+      margin-top: 30px;
+      span {
+        display: inline-block;
+      }
+      input {
+        width: 350px!important;
+        margin-left: 30px;
+      }
+    }
+  }
+
+}

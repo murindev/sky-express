@@ -1,0 +1,159 @@
+@import "../smart-grid";
+
+
+.info {
+    &-nav {
+        nav {
+            .col();
+            .size(12);
+            margin-top: 100px;
+            margin-bottom: 50px;
+            .md-block({
+                margin-top: 30px;
+                margin-bottom: 50px;
+            });
+
+            a {
+                font-weight: 700;
+                font-size: 26px;
+                color: @c-tone-high;
+                margin-right: 30px;
+                .md-block({
+                    font-size: 18px;
+                });
+                .xs-block({
+                    font-size: 14px;
+                });
+
+                &.router-link-exact-active, .active {
+                    font-weight: 700;
+                    font-size: 36px;
+                    color: @c-text;
+                    border-bottom: 4px solid @c-accent;
+                    .md-block({
+                        font-size: 18px;
+                    });
+                    .xs-block({
+                        font-size: 14px;
+                    });
+                }
+            }
+
+        }
+
+    }
+
+
+    &-faq {
+        .col();
+        .size(8);
+        .size-lg(12);
+
+        h2 {
+            font-weight: 700;
+            font-size: 26px;
+            color: @c-accent-2;
+            margin-top: 50px;
+            margin-bottom: 23px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            .md-block({
+                font-size: 18px;
+            });
+        }
+
+        &-item {
+            &_title {
+                display: block;
+                padding: 24px 50px 24px 30px;
+                width: 100%;
+                border-bottom-left-radius: 20px;
+                box-shadow: @shadow-light;
+                margin-bottom: 20px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    width: 18px;
+                    height: 10px;
+                    position: absolute;
+                    top: 30px;
+                    left: calc(100% - 40px);
+                }
+
+            }
+
+            &_text {
+                padding: 14px 30px 24px;
+                display: none;
+
+                p {
+                    padding-bottom: 30px;
+
+                    &:last-of-type {
+                        padding-bottom: unset;
+                    }
+                }
+            }
+
+        }
+
+
+        input[type="checkbox"] + label {
+            &:after {
+                mask: url("../../../assets/img/icons/chevron-bottom.svg") no-repeat 0 center;
+                -webkit-mask: url("../../../assets/img/icons/chevron-bottom.svg") no-repeat 0 center;
+                background-color: @c-text;
+            }
+
+            & + div {
+                display: none;
+            }
+        }
+
+        input[type="checkbox"]:checked + label {
+            &:after {
+                mask: url("../../../assets/img/icons/chevron-top.svg") no-repeat 0 center;
+                -webkit-mask: url("../../../assets/img/icons/chevron-top.svg") no-repeat 0 center;
+                background-color: @c-accent;
+            }
+
+            & + div {
+                display: block;
+            }
+        }
+
+
+    }
+
+    &-contact {
+        .col();
+        .size(3.5);
+        .size-lg(12);
+
+        &-block {
+            background-color: @c-accent;
+            padding: 30px;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            border-radius: 0px 20px;
+
+            button {
+                border: 1px solid @c-text;
+                padding: 10px 20px 10px 60px;
+                background: url("../../../assets/img/icons/phone-abris.svg") no-repeat 20px center;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 28px;
+                border-radius: 6px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,301 @@
+@import "../smart-grid";
+
+.personal {
+  //background-image: none !important;
+
+  &-area {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 109px;
+
+    &:before {
+      content: '';
+      display: block;
+      width: calc(2896 / 19.2 * 1vw);
+      height: calc(906 / 19.2 * 1vw);
+      //height: 906px;
+      //width: calc(100vw * 1.46);
+      background: @c-btn-text;
+      border-radius: 100%;
+      position: absolute;
+      //top: calc(452 / 19.2 * -1vw);
+
+      bottom: 0;
+      left: calc(693 / 19.2 * -1vw);
+      //left: calc(-50% + 223px);
+      z-index: -1;
+
+      /*
+          ellipse
+          w 2896
+          h 906
+          t 452
+          l 693
+          ---------
+          1920
+      */
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: @c-btn-text;
+      width: 100%;
+      height: 50%;
+      top: 0;
+      z-index: -2;
+    }
+  }
+
+  &-greeting {
+    color: @c-bg;
+
+    .wrapper();
+
+    > div {
+      .row-flex();
+      margin-top: 100px;
+    }
+
+    &-user {
+      .col();
+      .size(6);
+      display: flex;
+      flex-wrap: wrap;
+
+      h1 {
+        width: 100%;
+        font-size: 36px;
+        border-bottom: 1px solid @c-bg;
+        padding-bottom: 30px;
+        color: @c-bg;
+        margin-bottom: 20px;
+
+        span {
+          display: block;
+          font-size: 26px;
+          color: @c-accent;
+        }
+      }
+
+      > span {
+        display: inline-flex;
+        padding-left: 32px;
+        align-items: center;
+
+        &:first-of-type {
+          margin-right: 40px;
+        }
+
+        &.i-tel {
+          background: url("../../../assets/img/icons/personal-tel.svg") no-repeat 0 center
+        }
+
+        &.i-email {
+          background: url("../../../assets/img/icons/personal-email.svg") no-repeat 0 center;
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        margin-left: auto;
+        display: inline-flex;
+        padding-left: 32px;
+        color: @c-accent;
+        font-size: 16px;
+        background: url("../../../assets/img/icons/personal-pen.svg") no-repeat 0 center;
+      }
+    }
+
+    &-tracking {
+      .col();
+      .size(6);
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding-left: 120px;
+
+        label {
+          width: 100%;
+          margin-right: 20px;
+
+          &.regular {
+            input {
+              height: 56px;
+            }
+          }
+
+        }
+
+        button {
+          display: inline-flex;
+
+          &.btn {
+            height: 56px;
+          }
+        }
+      }
+    }
+  }
+
+  &-wpr {
+    margin-top: 50px;
+
+    > div {
+      > div {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &-menu {
+    .col();
+    .size(3.25);
+
+    button {
+      width: 100%;
+      height: 56px;
+      margin-bottom: 20px;
+
+      &.clean {
+        border: 1px solid @c-tone-high;
+        color: @c-tone-high;
+      }
+    }
+
+    nav {
+      width: 100%;
+      padding: 20px 0;
+      border-radius: 20px;
+      box-shadow: @shadow-light;
+      margin-top: 50px;
+
+      > a {
+        height: 62px;
+        padding-left: 70px;
+        .middle;
+        position: relative;
+        border-radius: 14px;
+        color: @c-tone-high;
+        font-weight: bold;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 57px;
+          background-color: @c-text;
+          mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+          mask-position: right center;
+            -webkit-mask-position: right center;
+        }
+
+        &:nth-of-type(1) {
+          &:before {
+            mask-image: url("../../../assets/img/icons/nav-user.svg");
+              -webkit-mask-image: url("../../../assets/img/icons/nav-user.svg");
+          }
+        }
+
+        &:nth-of-type(2) {
+          &:before {
+            mask-image: url("../../../assets/img/icons/nav-bus.svg");
+              -webkit-mask-image: url("../../../assets/img/icons/nav-bus.svg");
+          }
+        }
+
+        &:nth-of-type(3) {
+          &:before {
+            mask-image: url("../../../assets/img/icons/nav-book.svg");
+              -webkit-mask-image: url("../../../assets/img/icons/nav-book.svg");
+          }
+        }
+
+        &:nth-of-type(4) {
+          &:before {
+            mask-image: url("../../../assets/img/icons/nav-calc.svg");
+              -webkit-mask-image: url("../../../assets/img/icons/nav-calc.svg");
+          }
+        }
+
+        &:nth-of-type(5) {
+          &:before {
+            mask-image: url("../../../assets/img/icons/nav-folder.svg");
+              -webkit-mask-image: url("../../../assets/img/icons/nav-folder.svg");
+          }
+        }
+
+       &.active, &.router-link-exact-active {
+          background-color: @c-accent-2;
+          color: @c-bg!important;
+          &:before {
+            background-color: @c-bg;
+          }
+
+        }
+        &:hover {
+          color: @c-text;
+        }
+      }
+    }
+
+
+  }
+
+  &-body {
+    .col();
+    .size(8.35);
+  }
+
+  &-border {
+    border-left: 1px solid @c-tone-mid;
+    border-right: 1px solid @c-tone-mid;
+    &:first-of-type {
+      border-radius: 14px 14px 0 0;
+      border-top: 1px solid @c-tone-mid;
+    }
+    &:last-of-type {
+      border-radius: 0 0 14px 14px;
+      border-bottom: 1px solid @c-tone-mid;
+    }
+
+  }
+
+  &-bordered {
+    border-radius: 14px;
+    border: 1px solid @c-tone-mid;
+  }
+
+  &-reconciliation {
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 14px;
+    background-color: @c-tone-mid;
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 26px!important;
+    }
+
+    textarea {
+      height: 160px;
+    }
+
+    button {
+      margin-bottom: unset;
+    }
+  }
+
+}
+
+
