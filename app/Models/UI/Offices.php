@@ -37,6 +37,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Offices whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Offices whereZip($value)
  * @mixin \Eloquent
+ * @property string|null $code
+ * @property string|null $schedule_to
+ * @method static \Illuminate\Database\Eloquent\Builder|Offices whereCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Offices whereScheduleTo($value)
  */
 class Offices extends Model
 {

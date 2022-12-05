@@ -28,6 +28,7 @@ class Calculator extends Component
                 'isTab' => 'tab',
                 'component' => 'tab-calc'
             ],
+
             [
                 'nr' => '2',
                 'id' => 'tab-tariff',
@@ -76,6 +77,7 @@ class Calculator extends Component
                 'isTab' => 'no-tab',
                 'component' => 'tab-checkout'
             ],
+
         ];
     }
 

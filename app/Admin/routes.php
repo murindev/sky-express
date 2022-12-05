@@ -29,4 +29,15 @@ Route::group([
     $router->resource('/actions', \Pages\PageActionController::class);
     $router->resource('/faq', \Pages\FaqController::class);
 
+    //props
+    $router->resource('/props/package-standard', \Props\PropsStandardDimensionsController::class);
+    $router->resource('/props/values', \Props\PropsValuesController::class);
+    $router->resource('/props/texts', \Props\PropsTextValuesController::class);
+
+
+    //users
+    $router->resource('/users', UserController::class);
+
+
+
 });

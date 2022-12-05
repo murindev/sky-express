@@ -19,3 +19,9 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+
+Encore\Admin\Form::init(function (\Encore\Admin\Form $form){
+    $form->tools(function (\Encore\Admin\Form\Tools $tools){
+        $tools->disableDelete();
+    });
+});

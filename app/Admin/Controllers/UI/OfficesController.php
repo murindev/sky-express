@@ -23,7 +23,7 @@ class OfficesController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
+            ->header(trans('Офисы'))
             ->description(trans('admin.description'))
             ->body($this->grid());
     }

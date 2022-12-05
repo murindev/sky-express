@@ -9,16 +9,16 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link rel="stylesheet" href="{{asset('assets/less/style.css')}}">
-
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body>
 
     <x-layouts.section class="auth">
 
         <div class="auth-wpr">
-            <a href="{{route('home')}}" class="auth-logo">
+{{--            <a href="{{route('home')}}" class="auth-logo">
                 <img src="{{asset('assets/img/svg-logo-regular.svg')}}" alt="logo"/>
-            </a>
+            </a>--}}
 
             {{ $slot }}
 

@@ -23,7 +23,7 @@ class EasyDepartureController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
+            ->header(trans('Отправить посылку'))
             ->description(trans('admin.description'))
             ->body($this->grid());
     }

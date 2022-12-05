@@ -23,8 +23,8 @@ class SideSliderController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
-            ->description(trans('admin.description'))
+            ->header(trans('Слайдер боковой'))
+            ->description(trans('Слайды в блоке страхование'))
             ->body($this->grid());
     }
 
@@ -84,11 +84,11 @@ class SideSliderController extends Controller
         $grid->id('ID');
         $grid->column('order','Порядок')->editable();
         $grid->column('active','Вкл/Выкл')->switch();
-        $grid->btn('Заголовок кнопки');
-        $grid->action('Ссылка');
-        $grid->column('cite_before','Цитата - начало фразы');
-        $grid->column('cite_accent','Цитата - активная часть');
-        $grid->column('cite_after','Цитата - завершение фразы');
+        $grid->column('btn','Заголовок кнопки')->editable();
+        $grid->column('action','Ссылка')->editable();
+        $grid->column('cite_before','Цитата - начало фразы')->editable();
+        $grid->column('cite_accent','Цитата - активная часть')->editable();
+        $grid->column('cite_after','Цитата - завершение фразы')->editable();
 
         return $grid;
     }

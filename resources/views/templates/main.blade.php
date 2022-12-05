@@ -6,8 +6,12 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="{{asset('assets/less/style.css')}}">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    @stack('scripts')
+
+
     <title>TITLE</title>
+    @livewireStyles
+    @stack('scripts')
+
 </head>
 <body class="{{Illuminate\Support\Facades\Route::currentRouteName()}}">
 
@@ -16,6 +20,7 @@
 @yield('main')
 
 @include('templates.footer')
-
+@livewireScripts
+@stack('alpinejs')
 </body>
 </html>

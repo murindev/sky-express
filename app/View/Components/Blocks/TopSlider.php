@@ -25,7 +25,7 @@ class TopSlider extends Component
      */
     public function render()
     {
-        $slides = Slider::whereIn('type',[1,3])->get();
+        $slides = Slider::where('active',1)->orderBy('order')->get();
         return view('components.blocks.top-slider')->with(['slides' => $slides]);
     }
 }

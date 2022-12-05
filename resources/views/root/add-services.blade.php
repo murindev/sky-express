@@ -21,7 +21,7 @@
 
                         <div class="action-title">
                             <a href="{{route('add-service',$item->slug)}}" >{{ $item->title }}</a>
-                            <span class="date">{{ $item->created_at->format('d m Y') }}</span>
+{{--                            <span class="date">{{ $item->created_at->format('d m Y') }}</span>--}}
                         </div>
                     </div>
 

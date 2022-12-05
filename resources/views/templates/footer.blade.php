@@ -30,7 +30,6 @@
                 </div>
             </div>
 
-
             <div class="footer-communications">
                 <div class="footer-communications_wpr">
                     <a href="tel:+72222222222"> + 7 <b>222</b> 222-22-22 <span>Работаем круглосуточно</span></a>

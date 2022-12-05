@@ -7,8 +7,14 @@
 
     </div>
     <div class="tabsWidget-body">
-        <div x-show="currentTab === 'calculator'"><x-forms.tab-calculator /></div>
-        <div x-show="currentTab === 'package'"><x-forms.tab-tracking/></div>
+        <div x-show="currentTab === 'calculator'">
+{{--            <x-forms.tab-calculator />--}}
+            <h3>Калькулятор стоимости доставки</h3>
+            <livewire:calculator-widget/>
+        </div>
+        <div x-show="currentTab === 'package'">
+            <x-forms.tab-tracking/>
+        </div>
 
 
 {{--        <template x-show="currentTab === 'calculator'"><x-forms.tab-calculator/></template>--}}
@@ -33,3 +39,4 @@
         }
     }
 </script>
+

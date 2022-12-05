@@ -16,14 +16,14 @@ class TabTariff extends Component
         //
     }
 
-    public function tariff(): array
+/*    public function tariff(): array
     {
         return [
-            ['id' => 'standard', 'title' => 'Стандарт', 'desc' => '5 раб. дней*, 1500₽'],
-            ['id' => 'express', 'title' => 'Экспресс', 'desc' => '3 раб. дня*, 3500₽'],
-            ['id' => 'express-plus', 'title' => 'Экспресс-плюс', 'desc' => '2 раб. дня*, 4500₽']
+            ['id' => 'standard', 'title' => 'Стандарт', 'desc' => '5 раб. дней*, 1500₽', 'code' => 2],
+            ['id' => 'express', 'title' => 'Экспресс', 'desc' => '3 раб. дня*, 3500₽', 'code' => 3],
+            ['id' => 'express-plus', 'title' => 'Экспресс-плюс', 'desc' => '2 раб. дня*, 4500₽', 'code' => 5]
         ];
-    }
+    }*/
 
     /**
      * Get the view / contents that represent the component.
@@ -32,8 +32,6 @@ class TabTariff extends Component
      */
     public function render()
     {
-        return view('components.calculator-tabs.tab-tariff')->with([
-            'tariffs' => $this->tariff()
-        ]);
+        return view('components.calculator-tabs.tab-tariff');
     }
 }

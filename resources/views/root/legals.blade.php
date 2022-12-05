@@ -21,7 +21,7 @@
 
                         <div class="action-title">
                             <a href="{{route('individual',$item->slug)}}" >{{ $item->title }}</a>
-                            <span class="date">{{ $item->created_at->format('d m Y') }}</span>
+{{--                            <span class="date">{{ $item->created_at->format('d m Y') }}</span>--}}
                         </div>
                         {{--                    <div class="action-content">--}}
                         {{--                        <button class="accent">Стать участником</button>--}}

@@ -36,6 +36,24 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $measoft_login
+ * @property string $measoft_pass
+ * @property int $measoft_extra
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMeasoftExtra($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMeasoftLogin($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMeasoftPass($value)
+ * @property string|null $measoft_contract
+ * @property string $organization
+ * @property string $fio
+ * @property string $phone
+ * @property string $address
+ * @property string $address_legal
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereAddressLegal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereFio($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereMeasoftContract($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereOrganization($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User wherePhone($value)
  */
 class User extends Authenticatable
 {

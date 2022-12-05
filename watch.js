@@ -6,7 +6,7 @@ const wss = new WebSocket.Server({port: 8090});
 
 watch([
     './resources/',
-    './public/',
+    // './public/',
     './app/',
 ], {recursive: true}, (evt, name) => {
     console.log('%s changed.', name);

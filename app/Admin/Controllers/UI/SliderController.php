@@ -25,8 +25,8 @@ class SliderController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
-            ->description(trans('admin.description'))
+            ->header(trans('Слайдер в хэдере'))
+            ->description(trans('Слайды'))
             ->body($this->grid());
     }
 
@@ -86,12 +86,11 @@ class SliderController extends Controller
         $grid->id('ID');
         $grid->column('order','Порядок')->editable();
         $grid->column('active','Вкл/Выкл')->switch();
-        $grid->column('type','Тип')->editable('select', $this->type);
-        $grid->btn('Заголовок кнопки');
-        $grid->action('Ссылка');
-        $grid->column('cite_before','Цитата - начало фразы');
-        $grid->column('cite_accent','Цитата - активная часть');
-        $grid->column('cite_after','Цитата - завершение фразы');
+        $grid->column('btn','Заголовок кнопки')->editable();
+        $grid->column('action','Ссылка')->editable();
+        $grid->column('cite_before','Цитата - начало фразы')->editable();
+        $grid->column('cite_accent','Цитата - активная часть')->editable();
+        $grid->column('cite_after','Цитата - завершение фразы')->editable();
 
         return $grid;
     }
@@ -109,7 +108,6 @@ class SliderController extends Controller
         $show->id('ID');
         $show->order('Порядок');
         $show->active('Вкл/Выкл');
-        $show->type('Тип');
         $show->btn('Заголовок кнопки');
         $show->action('Ссылка');
         $show->cite_before('Цитата - начало фразы');
@@ -131,7 +129,7 @@ class SliderController extends Controller
         $form->display('ID');
         $form->number('order', 'Порядок')->default(500);
         $form->switch('active', 'Вкл/Выкл')->default(1);
-        $form->select('type', 'Тип')->options($this->type);
+//        $form->select('type', 'Тип')->options($this->type);
         $form->text('btn', 'Заголовок кнопки');
         $form->text('action', 'Ссылка');
         $form->text('cite_before', 'Цитата - начало фразы');

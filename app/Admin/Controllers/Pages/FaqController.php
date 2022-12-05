@@ -24,7 +24,7 @@ class FaqController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
+            ->header(trans('Полезная информация'))
             ->description(trans('admin.description'))
             ->body($this->grid());
     }
@@ -83,11 +83,9 @@ class FaqController extends Controller
         $grid = new Grid(new Faq);
 
         $grid->id('ID');
-        $grid->order('order');
-        $grid->active('active');
-        $grid->title('title');
-        $grid->created_at(trans('admin.created_at'));
-        $grid->updated_at(trans('admin.updated_at'));
+        $grid->column('order', 'Порядок')->editable();
+        $grid->column('active', 'Вкл/Выкл')->switch();
+        $grid->column('title','Заголовок');
 
         return $grid;
     }

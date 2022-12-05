@@ -23,7 +23,7 @@ class PageServicesController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
+            ->header(trans('Услуги'))
             ->description(trans('admin.description'))
             ->body($this->grid());
     }

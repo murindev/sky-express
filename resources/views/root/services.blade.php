@@ -24,7 +24,7 @@
                                 <a href="{{route('service',$item->slug)}}">{{ $item->title }}</a>
 
                             @isset($item->created_at)
-                            <span class="date">{{ $item->created_at->format('d m Y') }}</span>
+{{--                            <span class="date">{{ $item->created_at->format('d m Y') }}</span>--}}
                             @endisset
                         </div>
                     </div>

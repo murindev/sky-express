@@ -92,6 +92,12 @@
     }
   }
 
+
+
+
+
+
+
 }
 
 .add-contact_btn {
@@ -111,4 +117,255 @@
   .round(20px)!important;
    background: url("../../../assets/img/icons/pen.svg") no-repeat 0 center;
   display: inline-flex;
+}
+
+[for="tab-payment"] {
+    display: none;
+    .md-block({
+        display: block;});
+}
+
+[for="tab-track-number"] {
+    display: none;
+    .md-block({
+        display: block;});
+}
+
+.personal-border.calc {
+
+    border-radius: 14px;
+
+    h3 {
+        font-size: 26px;
+    }
+
+
+    [for="tab-checkout"], [for="tab-tariff"], [for="tab-calc"], [for="tab-track-number"] {
+        display: none;
+    }
+
+
+    fieldset {
+        margin: 30px -15px;
+        padding: 0;
+        box-shadow: unset;
+
+        border-radius: 20px;
+
+
+        > button {
+            .col();
+            .size(6);
+            margin-top: 24px;
+            height: 50px;
+        }
+
+    }
+
+
+    [data-type="prompt"] {
+        .col();
+        .size(6);
+    }
+
+    [data-type="promptSelect"] {
+        .col();
+        .size(6);
+        margin-top: 24px;
+
+
+    }
+
+    .tab-tariff-switcher {
+        &:before, &:after {
+            display: none;
+        }
+
+    }
+
+    [for="city"] {
+        .size(12);
+    }
+    [for="streetFrom"], [for="streetTo"] {
+        .size(12)
+    }
+    [for="buildingFrom"],[for="buildingTo"] {
+        .size(3)
+    }
+    [for="corpusFrom"], [for="corpusTo"] {
+        .size(3)
+    }
+    [for="blockFrom"], [for="blockTo"] {
+        .size(3)
+    }
+    [for="apartmentFrom"],  [for="apartmentTo"] {
+        .size(3)
+    }
+
+
+    .tab-add-cases:after {
+        width: calc(100% + @offset * 2);
+        left: -@offset;
+    }
+    .tab-add-switch-label {
+        font-size: 12px;
+    }
+
+    .tab-add-switch-form {
+        button {
+            .size(12);
+            margin-top: @offset;
+        }
+
+        .regular {
+            .size(2.4)
+        }
+    }
+
+    .tab-checkout-wpr {
+        margin-top: 40px;
+    }
+
+    .tab-checkout-departures {
+        .col();
+        .size(12);
+    }
+    .tab-checkout-save {
+        .col();
+        .size(12);
+        button {
+            margin: 20px auto;
+        }
+    }
+
+    .tab-add-manage {
+        width: 100%;
+    }
+
+/*
+
+    h2 {
+        .col();
+        .size(12);
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    fieldset {
+        .col();
+        .size(12);
+    }
+
+
+
+    .change-holder {
+        button.change {
+            rotate: 90deg;
+            left: -24px;
+        }
+
+    }
+
+
+
+
+    .stage_one {
+        .col();
+        .size(6);
+        margin-top: 24px;
+    }*/
+
+
+
+
+
+}
+
+
+.tab-payment {
+    justify-content: center;
+
+    h3 {
+        text-align: center;
+    }
+
+    label {
+        display: flex;
+        box-sizing: border-box;
+        width: 330px;
+        height: 150px;
+        padding: 30px;
+
+        font-size: 16px;
+        line-height: 24px;
+
+        background-color: @c-bg;
+        border-radius: 0 10px;
+
+        border: 1px solid @c-tone-high;
+        position: relative;
+
+
+        b {
+            margin-top: auto;
+        }
+        i {
+            display: none;
+        }
+    }
+
+    input[type="radio"]:checked + label {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid transparent;
+
+        i {
+            display: block;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 27px;
+            height: 27px;
+            background: url("../../../assets/img/icons/checked-accent.svg") no-repeat center;
+            background-size: contain;
+        }
+
+    }
+
+    [for="CASH"] {
+        background-image: url("../../../assets/img/icons/pay-user.svg");
+        background-position: 30px 30px;
+        background-repeat: no-repeat;
+
+    }
+
+    [for="OTHER"] {
+        background-image: url("../../../assets/img/icons/u-money.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &-btn {
+
+        width: 100%;
+        text-align: center;
+        button {
+            display: inline-flex!important;
+            width: 320px;
+            margin: 80px auto 64px;
+        }
+    }
+
+    .text {
+        column-count:2;
+        column-gap: @offset;
+        p {
+            padding-bottom: @offset;
+
+        }
+
+    }
+
+
+
+
 }

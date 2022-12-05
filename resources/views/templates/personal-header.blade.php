@@ -20,16 +20,8 @@
 
     <div class="personal-greeting">
         <div>
-            <div class="personal-greeting-user">
-                <h1>Приветствую в личном кабинете,
-                    <span>Иванов Иван Иванович</span>
-                </h1>
+            <livewire:personal.user-header/>
 
-                <span class="i-tel">+7 800 100 00 00</span>
-                <span class="i-email">info@skyru</span>
-                <button class="clean i-edit">Редактировать</button>
-
-            </div>
             <div class="personal-greeting-tracking">
                 <form>
                     <label class="regular">

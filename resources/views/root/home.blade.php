@@ -32,3 +32,6 @@
     </x-layouts.section>
 
 @endsection
+@push('alpinejs')
+    <script src="{{asset('/js/pages/home.js')}}"></script>
+@endpush

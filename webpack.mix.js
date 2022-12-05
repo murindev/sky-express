@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 
+// mix.browserSync('http://127.0.0.1:8000/calculator')
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,7 +13,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix
+    .js('resources/js/pages/calculator.js', 'public/js/pages')
+    .js('resources/js/pages/home.js', 'public/js/pages')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+

@@ -1,7 +1,8 @@
 <div class="express-delivery-title">
     <h2>Экспресс-доставка, доступная каждому</h2>
-    <button class="btn">Вызвать курьера</button>
+{{--    <button class="btn">Вызвать курьера</button>--}}
 </div>
+
 
 <x-layouts.inner-row>
     @foreach($expressDeliveries as $expressDelivery)

@@ -23,7 +23,7 @@ class PageLegalController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
+            ->header(trans('Юр услуги'))
             ->description(trans('admin.description'))
             ->body($this->grid());
     }
